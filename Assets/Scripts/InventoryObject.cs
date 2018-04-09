@@ -11,6 +11,7 @@ public class InventoryObject : MonoBehaviour, IActivatable
     private string descriptionText;
 
     private MeshRenderer meshRenderer;
+    private int NoteCount;
     private InventoryMenu inventoryMenu;
     private Collider collider;
 
@@ -33,6 +34,7 @@ public class InventoryObject : MonoBehaviour, IActivatable
     public void DoActivate()
     {
         inventoryMenu.PlayerInventory.Add(this);
+        NoteCount++;
 
         // Doing this rather than destroy because our Inventory menu still needs
         // to know about this object even though it has been collected and 
